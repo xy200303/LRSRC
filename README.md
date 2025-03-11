@@ -30,7 +30,7 @@
 ## 安装步骤
 ```bash
 # 克隆仓库
-git clone https://github.com/yourrepo/xiaoyun.git
+git clone https://github.com/xy200303/xiaoyun.git
 
 # 系统准备
 sudo apt-get install -y git build-essential
