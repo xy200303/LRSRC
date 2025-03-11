@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.ServiceType}}</title>
+</head>
+<body>
+<h2>{{.ServiceType}}</h2>
+<p>您正在尝试注册用户，请使用以下验证码：</p>
+<div style="background-color: #f0f0f0; padding: 10px; font-size: 18px; width: fit-content;">
+    <strong>{{.Code}}</strong>
+</div>
+<p>此验证码的有效期为 {{.Duration}} 分钟，请尽快完成操作。</p>
+<p>如果这不是您的操作，请忽略此邮件。</p>
+<footer>
+    <p>此邮件由 {{.Sender}} 发送，请勿直接回复。</p>
+</footer>
+</body>
+</html>

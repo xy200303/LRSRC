@@ -1,0 +1,68 @@
+# 数据库配置
+database:
+  type: mysql             # 设置数据库类型，可选值: mysql, postgres, sqlite, sqlserver, 暂不支持oracle
+
+  # 数据库连接配置
+  connection:
+    host: ""      # 数据库主机地址（MySQL, PostgreSQL, SQLServer, Oracle）
+    port: 3306             # 数据库端口（MySQL 默认3306，PostgreSQL 默认5432，SQLServer 默认1433，Oracle 默认1521）
+    user: ""       # 数据库用户名
+    password: ""   # 数据库密码
+    name: ""      # 数据库名称
+    charset: "utf8mb4"     # MySQL 字符编码，其他数据库类型无效
+    file: "vuln.db"        # SQLite 数据库文件路径（仅对 SQLite 有效）
+
+# 服务器配置
+server:
+  mode: "debug"                     # 设置运行模式，可选值: debug, release, test
+  start_mode: "all"                   # 设置启动模式，可选值: api, all
+  host: ""                            # 服务器监听地址，默认监听所有地址
+  port: 8123                          # 服务器监听端口
+  read_timeout: 10                    # 读取超时时间，单位：秒
+  write_timeout: 10                   # 写入超时时间，单位：秒
+  web_path: "web/dist"      # 前端用户界面静态资源物理路径，存放html和css等资源的路径
+  static_url: "/static"               # 前端静态资源访问路径，同存放css、js文件的目录一致，如物理路径frontend/dist/assets，通过URL：/assets/xxx.js访问
+  allow_origins: "http://localhost:3000,http://example.com,http://localhost:5173"             # 允许跨域的域名，多个域名用逗号隔开
+  allow_methods: "GET, POST, PUT, DELETE, OPTIONS"                                        # 允许的请求方法，多个请求方法用逗号隔开
+  allow_headers: "*,Origin,Content-Length,Content-Type,Authorization,isToken,Content-Type, Authorization, x-stainless-arch, x-stainless-lang, x-stainless-os, x-stainless-package-version, x-stainless-retry-count, x-stainless-runtime, x-stainless-runtime-version, x-stainless-timeout"     # 允许的请求头，多个请求头用逗号隔开
+  upload_dir: "uploads/"
+
+# 日志配置
+log:
+  level: "error"                  # gorm sql日志级别，可选值: silent、error、warn、info
+  file: "error.log"               # gorm sql错误日志文件路径
+
+#redis配置
+redis:
+  host: "127.0.0.1"
+  port: 6379
+  db: 0
+  password: ""
+
+#系统默认配置
+sys_config_map:
+  sys_file_storage: "local"
+  sys_file_max_size: 100
+  sys_smtp_host: "smtp.163.com"
+  sys_smtp_port: 25
+  sys_smtp_username: ""
+  sys_smtp_password: ""
+  sys_smtp_sender: "零日信安官方邮箱"
+  sys_smtp_captcha_title: "邮箱验证码"
+  sys_register_enable: true
+  sys_aliyun_oss_ak: ""
+  sys_aliyun_oss_sk: ""
+  sys_aliyun_oss_bucket: "xiaoyunoss"
+  sys_aliyun_oss_region: "cn-beijing"
+  sys_tencent_oss_ak: ""
+  sys_tencent_oss_sk: ""
+  sys_tencent_oss_base_url: "xiaoyun-1328288669.cos.ap-guangzhou.myqcloud.com"
+  sys_huawei_oss_ak: ""
+  sys_huawei_oss_sk: ""
+  sys_huawei_oss_bucket: "xiaoyun2003"
+  sys_huawei_oss_endpoint: "https://obs.cn-south-1.myhuaweicloud.com"
+  sys_ai_type: "openai"
+  sys_ai_base_url: "https://api.openai-proxy.org/v1"
+  sys_ai_api_key: ""
+  sys_ai_max_per_tokens: 4096
+  sys_ai_model: "gpt-4o-mini"

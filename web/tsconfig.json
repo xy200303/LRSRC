@@ -1,0 +1,18 @@
+{
+  "files": [],
+  "compilerOptions": {
+  // ... other configurations ...
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["src/*"]
+  },
+  "module": "commonjs",
+    "target": "es6",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true
+},
+"include": ["src/**/*"]
+}
